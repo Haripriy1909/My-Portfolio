@@ -119,6 +119,59 @@ const skillProjects = {
   ],
 };
 
+// ============================================================
+// CERTIFICATIONS
+// ============================================================
+
+const certifications = [
+  {
+    number: "01",
+    issuer: "ORACLE",
+    title: "Generative AI Professional",
+    subtitle: "Agentic AI / Generative AI",
+    description:
+      "Oracle certification badge demonstrating knowledge and skills related to generative AI and modern AI-driven development.",
+    type: "ORACLE CERTIFICATION",
+    link: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=8ABC3C5426D11A6DBB26AFD6365D5967CEC67C7841C371B9C79985F009E4CF7D",
+    color: "violet",
+  },
+  {
+    number: "02",
+    issuer: "HACKERRANK",
+    title: "JavaScript",
+    subtitle: "JavaScript Certification",
+    description:
+      "HackerRank certification validating JavaScript programming skills and practical problem-solving ability.",
+    type: "HACKERRANK CERTIFICATION",
+    link: "https://www.hackerrank.com/certificates/iframe/17e779c9e65c",
+    color: "green",
+  },
+  {
+    number: "03",
+    issuer: "HACKERRANK",
+    title: "Problem Solving",
+    subtitle: "Problem Solving Certification",
+    description:
+      "HackerRank certification demonstrating problem-solving and algorithmic programming fundamentals.",
+    type: "HACKERRANK CERTIFICATION",
+    link: "https://www.hackerrank.com/certificates/iframe/e75858be1451",
+    color: "cyan",
+  },
+
+  // Add your Google × Claude badge URL here when you have it.
+  // {
+  //   number: "04",
+  //   issuer: "GOOGLE × CLAUDE",
+  //   title: "Claude / AI Certification",
+  //   subtitle: "Google × Claude",
+  //   description:
+  //     "Certification or badge demonstrating practical knowledge of Claude and modern AI workflows.",
+  //   type: "AI CERTIFICATION",
+  //   link: "YOUR_GOOGLE_CLAUDE_BADGE_URL",
+  //   color: "orange",
+  // },
+];
+
 function Icon({ name, className = "h-5 w-5" }) {
   const paths = {
     arrow: (
@@ -127,12 +180,14 @@ function Icon({ name, className = "h-5 w-5" }) {
         <path d="m13 6 6 6-6 6" />
       </>
     ),
+
     github: (
       <>
         <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.2-.4 6.5-1.6 6.5-7A5.5 5.5 0 0 0 19 3.7 5.1 5.1 0 0 0 18.9 1S17.7.6 15 2.4a13.4 13.4 0 0 0-6 0C6.3.6 5.1 1 5.1 1A5.1 5.1 0 0 0 5 3.7a5.5 5.5 0 0 0-1.5 3.8c0 5.4 3.3 6.6 6.5 7A4.8 4.8 0 0 0 9 18v4" />
         <path d="M9 18c-4.5 2-5-2-7-2" />
       </>
     ),
+
     linkedin: (
       <>
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z" />
@@ -140,12 +195,14 @@ function Icon({ name, className = "h-5 w-5" }) {
         <path d="M4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
       </>
     ),
+
     mail: (
       <>
         <rect x="3" y="5" width="18" height="14" rx="2" />
         <path d="m3 7 9 6 9-6" />
       </>
     ),
+
     external: (
       <>
         <path d="M14 3h7v7" />
@@ -153,6 +210,7 @@ function Icon({ name, className = "h-5 w-5" }) {
         <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" />
       </>
     ),
+
     menu: (
       <>
         <path d="M4 6h16" />
@@ -160,13 +218,23 @@ function Icon({ name, className = "h-5 w-5" }) {
         <path d="M4 18h16" />
       </>
     ),
+
     close: (
       <>
         <path d="m6 6 12 12" />
         <path d="m18 6-12 12" />
       </>
     ),
+
     check: <path d="m5 12 4 4L19 6" />,
+
+    certificate: (
+      <>
+        <circle cx="12" cy="8" r="5" />
+        <path d="m9.5 12.5-1 8 3.5-2 3.5 2-1-8" />
+        <path d="m10 8 1.3 1.2L14 6.8" />
+      </>
+    ),
   };
 
   return (
@@ -700,6 +768,10 @@ function App() {
         "
       />
 
+      {/* ======================================================
+          NAVBAR
+      ====================================================== */}
+
       <header
         className="
           fixed
@@ -714,21 +786,17 @@ function App() {
           items-center
           justify-between
           rounded-2xl
-
           border
           border-zinc-200
           bg-white/90
           px-3
           shadow-[0_18px_50px_rgba(0,0,0,.08)]
           backdrop-blur-2xl
-
           transition-all
           duration-500
-
           dark:border-white/10
           dark:bg-[#08080b]/85
           dark:shadow-[0_18px_50px_rgba(0,0,0,.22)]
-
           sm:top-[18px]
           sm:w-[calc(100%-40px)]
           sm:px-5
@@ -770,15 +838,14 @@ function App() {
           </span>
 
           <span className="text-zinc-900 dark:text-white">
-            Haripriy<span className="text-violet-500 dark:text-violet-400">.</span>
+            Haripriy
+            <span className="text-violet-500 dark:text-violet-400">.</span>
           </span>
         </a>
 
         <nav
           className={`
-            ${
-              menuOpen ? "flex" : "hidden"
-            }
+            ${menuOpen ? "flex" : "hidden"}
 
             absolute
             left-0
@@ -810,35 +877,34 @@ function App() {
             md:backdrop-blur-none
           `}
         >
-          {["work", "stack", "education", "about"].map((item) => (
-            <a
-              key={item}
-              href={`#${item}`}
-              onClick={closeMenu}
-              className="
-                border-b
-                border-zinc-100
-                py-3
-                text-[11px]
-                font-medium
-                uppercase
-                tracking-[.09em]
-                text-zinc-500
-                transition
-
-                hover:text-violet-600
-
-                dark:border-white/5
-                dark:text-zinc-500
-                dark:hover:text-white
-
-                md:border-0
-                md:py-0
-              "
-            >
-              {item}
-            </a>
-          ))}
+          {["work", "stack", "certifications", "education", "about"].map(
+            (item) => (
+              <a
+                key={item}
+                href={`#${item}`}
+                onClick={closeMenu}
+                className="
+                  border-b
+                  border-zinc-100
+                  py-3
+                  text-[11px]
+                  font-medium
+                  uppercase
+                  tracking-[.09em]
+                  text-zinc-500
+                  transition
+                  hover:text-violet-600
+                  dark:border-white/5
+                  dark:text-zinc-500
+                  dark:hover:text-white
+                  md:border-0
+                  md:py-0
+                "
+              >
+                {item === "certifications" ? "certifications" : item}
+              </a>
+            ),
+          )}
 
           <button
             onClick={toggleTheme}
@@ -857,16 +923,13 @@ function App() {
               font-semibold
               text-zinc-700
               transition
-
               hover:border-violet-300
               hover:text-violet-600
-
               dark:border-white/10
               dark:bg-white/[.03]
               dark:text-zinc-300
               dark:hover:border-violet-300/30
               dark:hover:text-white
-
               md:hidden
             "
           >
@@ -895,14 +958,11 @@ function App() {
               font-semibold
               text-violet-700
               transition
-
               hover:bg-violet-100
-
               dark:border-violet-300/20
               dark:bg-violet-300/10
               dark:text-zinc-100
               dark:hover:border-violet-300/40
-
               md:hidden
             "
           >
@@ -913,7 +973,9 @@ function App() {
         <div className="hidden items-center gap-2 md:flex">
           <button
             onClick={toggleTheme}
-            aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+            aria-label={
+              darkMode ? "Switch to light mode" : "Switch to dark mode"
+            }
             className="
               inline-flex
               items-center
@@ -929,11 +991,9 @@ function App() {
               text-zinc-700
               shadow-sm
               transition-all
-
               hover:-translate-y-0.5
               hover:border-violet-300
               hover:text-violet-600
-
               dark:border-white/10
               dark:bg-white/[.03]
               dark:text-zinc-300
@@ -968,11 +1028,9 @@ function App() {
               text-zinc-700
               shadow-sm
               transition-all
-
               hover:-translate-y-0.5
               hover:border-violet-300
               hover:text-violet-600
-
               dark:border-white/10
               dark:bg-white/[.025]
               dark:text-zinc-300
@@ -1000,10 +1058,8 @@ function App() {
               font-semibold
               text-violet-700
               transition-all
-
               hover:-translate-y-0.5
               hover:bg-violet-100
-
               dark:border-violet-300/20
               dark:bg-violet-300/10
               dark:text-zinc-100
@@ -1030,12 +1086,10 @@ function App() {
             transition
             hover:border-violet-300
             hover:text-violet-600
-
             dark:border-white/10
             dark:text-zinc-300
             dark:hover:border-violet-300/30
             dark:hover:text-white
-
             md:hidden
           "
           aria-label="Toggle menu"
@@ -1045,6 +1099,10 @@ function App() {
       </header>
 
       <main id="top">
+        {/* ======================================================
+            HERO
+        ====================================================== */}
+
         <section
           className="
             mx-auto
@@ -1056,7 +1114,6 @@ function App() {
             justify-center
             pb-8
             pt-28
-
             sm:w-[calc(100%-70px)]
             sm:pb-14
             sm:pt-36
@@ -1148,7 +1205,6 @@ function App() {
                     text-black
                     shadow-[0_15px_40px_rgba(123,96,220,.2)]
                     transition
-
                     hover:-translate-y-1
                     hover:shadow-[0_18px_50px_rgba(123,96,220,.3)]
                   "
@@ -1176,11 +1232,9 @@ function App() {
                     text-zinc-700
                     shadow-sm
                     transition
-
                     hover:-translate-y-1
                     hover:border-violet-300
                     hover:text-violet-700
-
                     dark:border-white/10
                     dark:bg-white/[.025]
                     dark:text-zinc-300
@@ -1210,11 +1264,9 @@ function App() {
                     text-zinc-700
                     shadow-sm
                     transition
-
                     hover:-translate-y-1
                     hover:border-violet-300
                     hover:text-violet-700
-
                     dark:border-white/10
                     dark:bg-white/[.025]
                     dark:text-zinc-300
@@ -1236,10 +1288,8 @@ function App() {
                 grid
                 h-[300px]
                 place-items-center
-
                 sm:h-[420px]
                 md:h-[500px]
-
                 lg:order-none
                 lg:h-[570px]
               "
@@ -1254,10 +1304,8 @@ function App() {
                   bg-[radial-gradient(circle,rgba(167,139,250,.28),transparent_65%)]
                   blur-3xl
                   dark:bg-[radial-gradient(circle,rgba(167,139,250,.24),transparent_65%)]
-
                   sm:h-[380px]
                   sm:w-[380px]
-
                   lg:h-[430px]
                   lg:w-[430px]
                 "
@@ -1274,10 +1322,8 @@ function App() {
                   border-dashed
                   border-violet-400/20
                   shadow-[inset_0_0_60px_rgba(103,232,249,.04)]
-
                   sm:h-[430px]
                   sm:w-[430px]
-
                   lg:h-[510px]
                   lg:w-[510px]
                 "
@@ -1298,12 +1344,10 @@ function App() {
                   from-violet-100
                   to-zinc-100
                   shadow-[0_30px_80px_rgba(0,0,0,.15)]
-
                   dark:border-violet-300/20
                   dark:from-[#171520]
                   dark:to-[#09090d]
                   dark:shadow-[0_40px_100px_rgba(0,0,0,.45)]
-
                   sm:w-[280px]
                   md:w-[320px]
                   lg:w-[390px]
@@ -1322,7 +1366,6 @@ function App() {
                       to-zinc-100
                       text-center
                       text-violet-600
-
                       dark:from-[#302a50]
                       dark:to-[#0b0b10]
                       dark:text-violet-300
@@ -1348,97 +1391,22 @@ function App() {
                 <div className="pointer-events-none absolute inset-0 z-[4] bg-gradient-to-b from-transparent via-transparent to-black/50 dark:to-black/75" />
               </div>
 
-              <span
-                className="
-                  absolute
-                  left-[3%]
-                  top-[18%]
-                  z-[6]
-                  border
-                  border-zinc-200
-                  bg-white/80
-                  px-3
-                  py-2
-                  font-mono
-                  text-[9px]
-                  tracking-widest
-                  text-zinc-600
-                  backdrop-blur-xl
-
-                  dark:border-white/10
-                  dark:bg-black/60
-                  dark:text-zinc-400
-                "
-              >
+              <span className="absolute left-[3%] top-[18%] z-[6] border border-zinc-200 bg-white/80 px-3 py-2 font-mono text-[9px] tracking-widest text-zinc-600 backdrop-blur-xl dark:border-white/10 dark:bg-black/60 dark:text-zinc-400">
                 AI
               </span>
 
-              <span
-                className="
-                  absolute
-                  right-[5%]
-                  top-[31%]
-                  z-[6]
-                  border
-                  border-violet-200
-                  bg-white/80
-                  px-3
-                  py-2
-                  font-mono
-                  text-[9px]
-                  tracking-widest
-                  text-violet-600
-                  backdrop-blur-xl
-
-                  dark:border-white/10
-                  dark:bg-black/60
-                  dark:text-violet-200
-                "
-              >
+              <span className="absolute right-[5%] top-[31%] z-[6] border border-violet-200 bg-white/80 px-3 py-2 font-mono text-[9px] tracking-widest text-violet-600 backdrop-blur-xl dark:border-white/10 dark:bg-black/60 dark:text-violet-200">
                 REACT
               </span>
 
-              <span
-                className="
-                  absolute
-                  bottom-[16%]
-                  left-[14%]
-                  z-[6]
-                  border
-                  border-cyan-200
-                  bg-white/80
-                  px-3
-                  py-2
-                  font-mono
-                  text-[9px]
-                  tracking-widest
-                  text-cyan-600
-                  backdrop-blur-xl
-
-                  dark:border-white/10
-                  dark:bg-black/60
-                  dark:text-cyan-200
-                "
-              >
+              <span className="absolute bottom-[16%] left-[14%] z-[6] border border-cyan-200 bg-white/80 px-3 py-2 font-mono text-[9px] tracking-widest text-cyan-600 backdrop-blur-xl dark:border-white/10 dark:bg-black/60 dark:text-cyan-200">
                 GSAP
               </span>
             </div>
           </div>
 
-          <div
-            className="
-              hero-animate
-              mt-10
-              flex
-              items-center
-              justify-between
-              gap-4
-              font-mono
-              text-xs
-              text-zinc-500
-            "
-          >
-            <span>01 — 04</span>
+          <div className="hero-animate mt-10 flex items-center justify-between gap-4 font-mono text-xs text-zinc-500">
+            <span>01 — 05</span>
 
             <span className="hidden items-center gap-2.5 text-base font-semibold tracking-wide text-zinc-500 sm:flex">
               Scroll to explore
@@ -1451,6 +1419,10 @@ function App() {
           </div>
         </section>
 
+        {/* ======================================================
+            MARQUEE
+        ====================================================== */}
+
         <section className="overflow-hidden border-y border-zinc-200 py-5 dark:border-white/10">
           <div className="marquee-track flex w-max gap-10 font-mono text-[11px] tracking-[.13em] text-zinc-500">
             {[...Array(2)].flatMap((_, copy) =>
@@ -1462,6 +1434,7 @@ function App() {
                 "REST APIs",
                 "MONGODB",
                 "FULL-STACK",
+                "CERTIFIED",
               ].map((x, i) => (
                 <span
                   key={`${copy}-${i}`}
@@ -1475,17 +1448,13 @@ function App() {
           </div>
         </section>
 
+        {/* ======================================================
+            WORK
+        ====================================================== */}
+
         <section
           id="work"
-          className="
-            mx-auto
-            w-[calc(100%-30px)]
-            max-w-[1240px]
-            pt-28
-
-            sm:w-[calc(100%-70px)]
-            sm:pt-36
-          "
+          className="mx-auto w-[calc(100%-30px)] max-w-[1240px] pt-28 sm:w-[calc(100%-70px)] sm:pt-36"
         >
           <div className="reveal mb-12 grid items-end gap-6 lg:grid-cols-[1fr_390px] lg:gap-14">
             <div>
@@ -1515,72 +1484,12 @@ function App() {
                 href={project.link}
                 target="_blank"
                 rel="noreferrer"
-                className="
-                  project-card
-                  reveal
-                  group
-                  block
-                  overflow-hidden
-                  border
-                  border-zinc-200
-                  bg-white
-                  shadow-[0_15px_45px_rgba(0,0,0,.05)]
-                  transition
-
-                  hover:border-violet-300
-                  hover:shadow-[0_25px_70px_rgba(0,0,0,.10)]
-
-                  dark:border-white/10
-                  dark:bg-[#0a0a0e]
-                  dark:shadow-none
-                  dark:hover:border-violet-300/30
-                  dark:hover:shadow-[0_25px_70px_rgba(0,0,0,.25)]
-                "
+                className="project-card reveal group block overflow-hidden border border-zinc-200 bg-white shadow-[0_15px_45px_rgba(0,0,0,.05)] transition hover:border-violet-300 hover:shadow-[0_25px_70px_rgba(0,0,0,.10)] dark:border-white/10 dark:bg-[#0a0a0e] dark:shadow-none dark:hover:border-violet-300/30 dark:hover:shadow-[0_25px_70px_rgba(0,0,0,.25)]"
               >
-                <div
-                  className="
-                    project-media
-                    relative
-                    h-[220px]
-                    overflow-hidden
-                    bg-[radial-gradient(circle_at_50%_35%,rgba(167,139,250,.15),transparent_50%)]
+                <div className="project-media relative h-[220px] overflow-hidden bg-[radial-gradient(circle_at_50%_35%,rgba(167,139,250,.15),transparent_50%)] dark:bg-[radial-gradient(circle_at_50%_35%,rgba(167,139,250,.2),transparent_50%)] sm:h-[315px]">
+                  <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(124,58,237,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,.05)_1px,transparent_1px)] [background-size:30px_30px] dark:[background-image:linear-gradient(rgba(255,255,255,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.035)_1px,transparent_1px)]" />
 
-                    dark:bg-[radial-gradient(circle_at_50%_35%,rgba(167,139,250,.2),transparent_50%)]
-
-                    sm:h-[315px]
-                  "
-                >
-                  <div
-                    className="
-                      absolute
-                      inset-0
-                      opacity-40
-                      [background-image:linear-gradient(rgba(124,58,237,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(124,58,237,.05)_1px,transparent_1px)]
-                      [background-size:30px_30px]
-                      dark:[background-image:linear-gradient(rgba(255,255,255,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.035)_1px,transparent_1px)]
-                    "
-                  />
-
-                  <div
-                    className="
-                      absolute
-                      left-[12%]
-                      top-[20%]
-                      h-[62%]
-                      w-[76%]
-                      border
-                      border-zinc-200
-                      bg-white/70
-                      shadow-[0_20px_50px_rgba(0,0,0,.08)]
-
-                      dark:border-white/15
-                      dark:bg-black/60
-                      dark:shadow-[0_30px_70px_rgba(0,0,0,.5)]
-
-                      sm:left-[18%]
-                      sm:w-[64%]
-                    "
-                  >
+                  <div className="absolute left-[12%] top-[20%] h-[62%] w-[76%] border border-zinc-200 bg-white/70 shadow-[0_20px_50px_rgba(0,0,0,.08)] dark:border-white/15 dark:bg-black/60 dark:shadow-[0_30px_70px_rgba(0,0,0,.5)] sm:left-[18%] sm:w-[64%]">
                     <div className="flex gap-1 p-2">
                       <i className="h-1.5 w-1.5 rounded-full bg-zinc-300 dark:bg-zinc-600" />
                       <i className="h-1.5 w-1.5 rounded-full bg-zinc-300 dark:bg-zinc-600" />
@@ -1619,51 +1528,14 @@ function App() {
                       {project.stack.map((item) => (
                         <span
                           key={item}
-                          className="
-                            rounded-md
-                            border
-                            border-zinc-200
-                            bg-zinc-50
-                            px-2.5
-                            py-1.5
-                            text-[10px]
-                            font-semibold
-                            text-zinc-600
-                            transition
-
-                            group-hover:border-violet-300
-
-                            dark:border-white/10
-                            dark:bg-transparent
-                            dark:text-zinc-400
-                            dark:group-hover:border-violet-300/20
-                          "
+                          className="rounded-md border border-zinc-200 bg-zinc-50 px-2.5 py-1.5 text-[10px] font-semibold text-zinc-600 transition group-hover:border-violet-300 dark:border-white/10 dark:bg-transparent dark:text-zinc-400 dark:group-hover:border-violet-300/20"
                         >
                           {item}
                         </span>
                       ))}
                     </div>
 
-                    <span
-                      className="
-                        grid
-                        h-10
-                        w-10
-                        shrink-0
-                        place-items-center
-                        border
-                        border-zinc-200
-                        text-violet-500
-                        transition
-
-                        group-hover:rotate-45
-                        group-hover:border-violet-300
-
-                        dark:border-white/10
-                        dark:text-violet-300
-                        dark:group-hover:border-violet-300/40
-                      "
-                    >
+                    <span className="grid h-10 w-10 shrink-0 place-items-center border border-zinc-200 text-violet-500 transition group-hover:rotate-45 group-hover:border-violet-300 dark:border-white/10 dark:text-violet-300 dark:group-hover:border-violet-300/40">
                       <Icon name="arrow" />
                     </span>
                   </div>
@@ -1673,17 +1545,13 @@ function App() {
           </div>
         </section>
 
+        {/* ======================================================
+            STACK
+        ====================================================== */}
+
         <section
           id="stack"
-          className="
-            mx-auto
-            w-[calc(100%-30px)]
-            max-w-[1240px]
-            pt-28
-
-            sm:w-[calc(100%-70px)]
-            sm:pt-36
-          "
+          className="mx-auto w-[calc(100%-30px)] max-w-[1240px] pt-28 sm:w-[calc(100%-70px)] sm:pt-36"
         >
           <div className="reveal mb-12 grid items-end gap-6 lg:grid-cols-[1fr_390px] lg:gap-14">
             <div>
@@ -1720,13 +1588,10 @@ function App() {
                     border-zinc-200
                     py-6
                     transition
-
                     dark:border-white/10
-
                     sm:grid-cols-[55px_1fr_40px]
                     sm:items-center
                     sm:gap-6
-
                     ${
                       active
                         ? "bg-violet-50 px-3 shadow-[0_20px_48px_rgba(0,0,0,.05)] dark:bg-white/[.025] dark:shadow-[0_20px_48px_rgba(0,0,0,.22)]"
@@ -1763,28 +1628,7 @@ function App() {
                           {details.map((item) => (
                             <span
                               key={item}
-                              className="
-                                skill-chip
-                                rounded-full
-                                border
-                                border-violet-300/30
-                                bg-violet-50
-                                px-3.5
-                                py-2
-                                text-sm
-                                font-semibold
-                                text-violet-700
-                                transition
-
-                                hover:-translate-y-1
-                                hover:bg-violet-100
-                                hover:shadow-lg
-
-                                dark:border-violet-300/25
-                                dark:bg-violet-300/5
-                                dark:text-violet-100
-                                dark:hover:bg-violet-300/10
-                              "
+                              className="skill-chip rounded-full border border-violet-300/30 bg-violet-50 px-3.5 py-2 text-sm font-semibold text-violet-700 transition hover:-translate-y-1 hover:bg-violet-100 hover:shadow-lg dark:border-violet-300/25 dark:bg-violet-300/5 dark:text-violet-100 dark:hover:bg-violet-300/10"
                             >
                               {item}
                             </span>
@@ -1800,36 +1644,10 @@ function App() {
                                 target="_blank"
                                 rel="noreferrer"
                                 onClick={(e) => e.stopPropagation()}
-                                className="
-                                  inline-flex
-                                  items-center
-                                  gap-2
-                                  rounded-xl
-                                  border
-                                  border-violet-300/30
-                                  bg-violet-50
-                                  px-3.5
-                                  py-2.5
-                                  text-base
-                                  font-bold
-                                  text-violet-700
-                                  transition
-
-                                  hover:-translate-y-1
-                                  hover:bg-violet-100
-                                  hover:shadow-lg
-
-                                  dark:border-violet-300/25
-                                  dark:bg-transparent
-                                  dark:text-violet-100
-                                  dark:hover:bg-white/5
-                                "
+                                className="inline-flex items-center gap-2 rounded-xl border border-violet-300/30 bg-violet-50 px-3.5 py-2.5 text-base font-bold text-violet-700 transition hover:-translate-y-1 hover:bg-violet-100 hover:shadow-lg dark:border-violet-300/25 dark:bg-transparent dark:text-violet-100 dark:hover:bg-white/5"
                               >
                                 {name}
-                                <Icon
-                                  name="external"
-                                  className="h-4 w-4"
-                                />
+                                <Icon name="external" className="h-4 w-4" />
                               </a>
                             ))}
                           </div>
@@ -1847,22 +1665,150 @@ function App() {
           </div>
         </section>
 
-        <section
-          id="education"
-          className="
-            mx-auto
-            w-[calc(100%-30px)]
-            max-w-[1240px]
-            pt-28
+        {/* ======================================================
+            CERTIFICATIONS
+        ====================================================== */}
 
-            sm:w-[calc(100%-70px)]
-            sm:pt-36
-          "
+        <section
+          id="certifications"
+          className="mx-auto w-[calc(100%-30px)] max-w-[1240px] pt-28 sm:w-[calc(100%-70px)] sm:pt-36"
         >
           <div className="reveal mb-12 grid items-end gap-6 lg:grid-cols-[1fr_390px] lg:gap-14">
             <div>
               <p className="mb-3 font-mono text-[10px] uppercase tracking-[.14em] text-zinc-500">
-                Education / 03
+                Certifications / 03
+              </p>
+
+              <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] font-extrabold leading-none tracking-[-.065em]">
+                Proof of{" "}
+                <span className="bg-gradient-to-r from-violet-500 to-cyan-500 bg-clip-text text-transparent dark:from-violet-200 dark:to-cyan-300">
+                  learning.
+                </span>
+              </h2>
+            </div>
+
+            <p className="text-base leading-7 text-zinc-600 dark:text-zinc-500">
+              Professional certifications and skill credentials covering
+              generative AI, JavaScript, and problem solving.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {certifications.map((certificate) => (
+              <a
+                key={certificate.number}
+                href={certificate.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  reveal
+                  group
+                  relative
+                  overflow-hidden
+                  rounded-3xl
+                  border
+                  border-zinc-200
+                  bg-white
+                  p-6
+                  shadow-[0_20px_60px_rgba(0,0,0,.05)]
+                  transition-all
+                  duration-500
+                  hover:-translate-y-2
+                  hover:border-violet-300
+                  hover:shadow-[0_30px_80px_rgba(123,96,220,.14)]
+
+                  dark:border-white/10
+                  dark:bg-[#0b0b10]
+                  dark:shadow-none
+                  dark:hover:border-violet-300/30
+                  dark:hover:shadow-[0_30px_80px_rgba(123,96,220,.18)]
+
+                  sm:p-7
+                "
+              >
+                {/* Decorative glow */}
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    -right-20
+                    -top-20
+                    h-40
+                    w-40
+                    rounded-full
+                    bg-violet-500/10
+                    blur-3xl
+                    transition
+                    duration-500
+                    group-hover:bg-violet-500/20
+                  "
+                />
+
+                <div className="relative">
+                  <div className="mb-7 flex items-center justify-between">
+                    <span className="font-mono text-[10px] tracking-[.16em] text-zinc-400 dark:text-zinc-600">
+                      {certificate.number}
+                    </span>
+
+                    <span className="grid h-12 w-12 place-items-center rounded-2xl border border-violet-200 bg-violet-50 text-violet-600 transition group-hover:rotate-6 group-hover:scale-105 dark:border-violet-300/20 dark:bg-violet-300/[.07] dark:text-violet-200">
+                      <Icon name="certificate" className="h-6 w-6" />
+                    </span>
+                  </div>
+
+                  <p className="font-mono text-[9px] uppercase tracking-[.17em] text-violet-500 dark:text-violet-300">
+                    {certificate.type}
+                  </p>
+
+                  <div className="mt-2 font-mono text-[10px] font-bold tracking-[.15em] text-zinc-400 dark:text-zinc-600">
+                    {certificate.issuer}
+                  </div>
+
+                  <h3 className="mt-5 text-2xl font-extrabold tracking-[-.045em] text-zinc-900 dark:text-white">
+                    {certificate.title}
+                  </h3>
+
+                  <p className="mt-2 text-sm font-semibold text-violet-600 dark:text-violet-300">
+                    {certificate.subtitle}
+                  </p>
+
+                  <p className="mt-4 text-sm leading-7 text-zinc-600 dark:text-zinc-500">
+                    {certificate.description}
+                  </p>
+
+                  <div className="mt-7 flex items-center justify-between border-t border-zinc-100 pt-5 dark:border-white/10">
+                    <span className="text-[10px] font-semibold uppercase tracking-[.12em] text-zinc-400">
+                      View credential
+                    </span>
+
+                    <span className="grid h-9 w-9 place-items-center rounded-xl border border-zinc-200 text-violet-500 transition group-hover:rotate-45 group-hover:border-violet-300 dark:border-white/10 dark:text-violet-300">
+                      <Icon name="external" className="h-4 w-4" />
+                    </span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div className="reveal mt-6 rounded-2xl border border-violet-200/70 bg-violet-50/50 px-5 py-4 dark:border-violet-300/10 dark:bg-violet-300/[.025]">
+            <p className="text-center text-xs leading-6 text-zinc-500">
+              More AI certifications and badges can be added here as they are
+              earned.
+            </p>
+          </div>
+        </section>
+
+        {/* ======================================================
+            EDUCATION
+        ====================================================== */}
+
+        <section
+          id="education"
+          className="mx-auto w-[calc(100%-30px)] max-w-[1240px] pt-28 sm:w-[calc(100%-70px)] sm:pt-36"
+        >
+          <div className="reveal mb-12 grid items-end gap-6 lg:grid-cols-[1fr_390px] lg:gap-14">
+            <div>
+              <p className="mb-3 font-mono text-[10px] uppercase tracking-[.14em] text-zinc-500">
+                Education / 04
               </p>
 
               <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] font-extrabold leading-none tracking-[-.065em]">
@@ -1897,31 +1843,7 @@ function App() {
           ].map((edu, i) => (
             <div
               key={edu.year}
-              className="
-                reveal
-                mb-3
-                grid
-                gap-5
-                border
-                border-zinc-200
-                bg-gradient-to-r
-                from-violet-50
-                to-white
-                p-6
-                shadow-[0_15px_45px_rgba(0,0,0,.04)]
-                transition-all
-                hover:border-violet-200
-
-                dark:border-white/10
-                dark:from-violet-400/[.06]
-                dark:to-white/[.015]
-                dark:shadow-none
-
-                sm:grid-cols-[150px_1fr_70px]
-                sm:items-center
-                sm:gap-8
-                sm:px-10
-              "
+              className="reveal mb-3 grid gap-5 border border-zinc-200 bg-gradient-to-r from-violet-50 to-white p-6 shadow-[0_15px_45px_rgba(0,0,0,.04)] transition-all hover:border-violet-200 dark:border-white/10 dark:from-violet-400/[.06] dark:to-white/[.015] dark:shadow-none sm:grid-cols-[150px_1fr_70px] sm:items-center sm:gap-8 sm:px-10"
             >
               <div className="font-mono text-[10px] tracking-[.13em] text-zinc-500">
                 {edu.year}
@@ -1946,70 +1868,22 @@ function App() {
                 </p>
               </div>
 
-              <div
-                className="
-                  hidden
-                  h-16
-                  w-16
-                  place-items-center
-                  justify-self-end
-                  rounded-full
-                  border
-                  border-violet-300/30
-                  font-mono
-                  text-[10px]
-                  font-bold
-                  text-violet-600
-
-                  dark:border-violet-300/20
-                  dark:text-violet-200
-
-                  sm:grid
-                "
-              >
+              <div className="hidden h-16 w-16 place-items-center justify-self-end rounded-full border border-violet-300/30 font-mono text-[10px] font-bold text-violet-600 dark:border-violet-300/20 dark:text-violet-200 sm:grid">
                 {edu.badge}
               </div>
             </div>
           ))}
         </section>
 
+        {/* ======================================================
+            ABOUT
+        ====================================================== */}
+
         <section
           id="about"
-          className="
-            mx-auto
-            w-[calc(100%-30px)]
-            max-w-[1240px]
-            pt-28
-
-            sm:w-[calc(100%-70px)]
-            sm:pt-36
-          "
+          className="mx-auto w-[calc(100%-30px)] max-w-[1240px] pt-28 sm:w-[calc(100%-70px)] sm:pt-36"
         >
-          <div
-            className="
-              reveal
-              relative
-              overflow-hidden
-              rounded-[2rem]
-              border
-              border-violet-200
-              bg-gradient-to-br
-              from-violet-50
-              via-white
-              to-cyan-50
-              p-6
-              shadow-[0_35px_100px_rgba(0,0,0,.08)]
-
-              dark:border-violet-300/15
-              dark:from-violet-500/[.08]
-              dark:via-[#0b0b10]
-              dark:to-cyan-400/[.04]
-              dark:shadow-[0_35px_100px_rgba(0,0,0,.35)]
-
-              sm:p-10
-              lg:p-14
-            "
-          >
+          <div className="reveal relative overflow-hidden rounded-[2rem] border border-violet-200 bg-gradient-to-br from-violet-50 via-white to-cyan-50 p-6 shadow-[0_35px_100px_rgba(0,0,0,.08)] dark:border-violet-300/15 dark:from-violet-500/[.08] dark:via-[#0b0b10] dark:to-cyan-400/[.04] dark:shadow-[0_35px_100px_rgba(0,0,0,.35)] sm:p-10 lg:p-14">
             <div className="pointer-events-none absolute -right-28 -top-28 h-72 w-72 rounded-full bg-violet-500/10 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-28 -left-28 h-72 w-72 rounded-full bg-cyan-400/5 blur-3xl" />
 
@@ -2051,76 +1925,21 @@ function App() {
                   </div>
                 </div>
 
-                <div
-                  className="
-                    absolute
-                    -right-3
-                    top-8
-                    rounded-xl
-                    border
-                    border-zinc-200
-                    bg-white/90
-                    px-3
-                    py-2
-                    font-mono
-                    text-[10px]
-                    tracking-widest
-                    text-violet-600
-                    shadow-xl
-                    backdrop-blur-md
-
-                    dark:border-white/10
-                    dark:bg-[#0d0d13]/90
-                    dark:text-violet-200
-                  "
-                >
+                <div className="absolute -right-3 top-8 rounded-xl border border-zinc-200 bg-white/90 px-3 py-2 font-mono text-[10px] tracking-widest text-violet-600 shadow-xl backdrop-blur-md dark:border-white/10 dark:bg-[#0d0d13]/90 dark:text-violet-200">
                   BUILD
                 </div>
 
-                <div
-                  className="
-                    absolute
-                    -left-3
-                    bottom-10
-                    rounded-xl
-                    border
-                    border-zinc-200
-                    bg-white/90
-                    px-3
-                    py-2
-                    font-mono
-                    text-[10px]
-                    tracking-widest
-                    text-cyan-600
-                    shadow-xl
-                    backdrop-blur-md
-
-                    dark:border-white/10
-                    dark:bg-[#0d0d13]/90
-                    dark:text-cyan-200
-                  "
-                >
+                <div className="absolute -left-3 bottom-10 rounded-xl border border-zinc-200 bg-white/90 px-3 py-2 font-mono text-[10px] tracking-widest text-cyan-600 shadow-xl backdrop-blur-md dark:border-white/10 dark:bg-[#0d0d13]/90 dark:text-cyan-200">
                   SHIP
                 </div>
               </div>
 
               <div>
                 <p className="mb-3 font-mono text-xs uppercase tracking-[.18em] text-violet-600 dark:text-violet-300">
-                  About / 04
+                  About / 05
                 </p>
 
-                <h2
-                  className="
-                    max-w-3xl
-                    text-[clamp(2.7rem,5vw,5rem)]
-                    font-extrabold
-                    leading-[.98]
-                    tracking-[-.065em]
-                    text-zinc-900
-
-                    dark:text-white
-                  "
-                >
+                <h2 className="max-w-3xl text-[clamp(2.7rem,5vw,5rem)] font-extrabold leading-[.98] tracking-[-.065em] text-zinc-900 dark:text-white">
                   Engineering with an{" "}
                   <span className="bg-gradient-to-r from-violet-500 to-cyan-500 bg-clip-text text-transparent dark:from-violet-200 dark:to-cyan-300">
                     AI-first
@@ -2150,25 +1969,7 @@ function App() {
                   ].map(([a, b]) => (
                     <div
                       key={a}
-                      className="
-                        rounded-2xl
-                        border
-                        border-zinc-200
-                        bg-white
-                        p-5
-                        shadow-sm
-                        transition
-
-                        hover:-translate-y-1
-                        hover:border-violet-300
-                        hover:bg-violet-50
-
-                        dark:border-white/10
-                        dark:bg-white/[.03]
-                        dark:shadow-none
-                        dark:hover:border-violet-300/30
-                        dark:hover:bg-violet-300/[.05]
-                      "
+                      className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-violet-300 hover:bg-violet-50 dark:border-white/10 dark:bg-white/[.03] dark:shadow-none dark:hover:border-violet-300/30 dark:hover:bg-violet-300/[.05]"
                     >
                       <strong className="block text-sm font-bold text-violet-700 dark:text-violet-100 sm:text-base">
                         {a}
@@ -2185,33 +1986,15 @@ function App() {
           </div>
         </section>
 
+        {/* ======================================================
+            CONTACT
+        ====================================================== */}
+
         <section
           id="contact"
-          className="
-            mx-auto
-            w-[calc(100%-30px)]
-            max-w-[1240px]
-            pb-14
-            pt-28
-
-            sm:w-[calc(100%-70px)]
-            sm:pt-36
-          "
+          className="mx-auto w-[calc(100%-30px)] max-w-[1240px] pb-14 pt-28 sm:w-[calc(100%-70px)] sm:pt-36"
         >
-          <div
-            className="
-              reveal
-              border-y
-              border-zinc-200
-              px-2
-              py-24
-              text-center
-
-              dark:border-white/10
-
-              sm:py-32
-            "
-          >
+          <div className="reveal border-y border-zinc-200 px-2 py-24 text-center dark:border-white/10 sm:py-32">
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[.14em] text-zinc-500">
               Open to conversations
             </p>
@@ -2231,123 +2014,39 @@ function App() {
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <button
                 onClick={openContact}
-                className="
-                  inline-flex
-                  items-center
-                  gap-2
-                  rounded-xl
-                  bg-gradient-to-r
-                  from-violet-300
-                  to-violet-500
-                  px-5
-                  py-3
-                  text-sm
-                  font-bold
-                  text-black
-                  transition
-
-                  hover:-translate-y-1
-                "
+                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-300 to-violet-500 px-5 py-3 text-sm font-bold text-black transition hover:-translate-y-1"
               >
                 Let&apos;s connect <Icon name="arrow" />
               </button>
 
               <a
-                className="
-                  grid
-                  h-12
-                  w-12
-                  place-items-center
-                  border
-                  border-zinc-200
-                  bg-white
-                  text-zinc-500
-                  shadow-sm
-                  transition
-
-                  hover:-translate-y-1
-                  hover:border-violet-300
-                  hover:text-violet-600
-
-                  dark:border-white/10
-                  dark:bg-transparent
-                  dark:text-zinc-400
-                  dark:shadow-none
-                  dark:hover:border-violet-300/40
-                  dark:hover:text-white
-                "
+                className="grid h-12 w-12 place-items-center border border-zinc-200 bg-white text-zinc-500 shadow-sm transition hover:-translate-y-1 hover:border-violet-300 hover:text-violet-600 dark:border-white/10 dark:bg-transparent dark:text-zinc-400 dark:shadow-none dark:hover:border-violet-300/40 dark:hover:text-white"
                 href="https://github.com/Haripriy1909"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="GitHub"
               >
                 <Icon name="github" />
               </a>
 
               <a
-                className="
-                  grid
-                  h-12
-                  w-12
-                  place-items-center
-                  border
-                  border-zinc-200
-                  bg-white
-                  text-zinc-500
-                  shadow-sm
-                  transition
-
-                  hover:-translate-y-1
-                  hover:border-violet-300
-                  hover:text-violet-600
-
-                  dark:border-white/10
-                  dark:bg-transparent
-                  dark:text-zinc-400
-                  dark:shadow-none
-                  dark:hover:border-violet-300/40
-                  dark:hover:text-white
-                "
+                className="grid h-12 w-12 place-items-center border border-zinc-200 bg-white text-zinc-500 shadow-sm transition hover:-translate-y-1 hover:border-violet-300 hover:text-violet-600 dark:border-white/10 dark:bg-transparent dark:text-zinc-400 dark:shadow-none dark:hover:border-violet-300/40 dark:hover:text-white"
                 href="https://www.linkedin.com/in/haripriy-darji/"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="LinkedIn"
               >
                 <Icon name="linkedin" />
               </a>
             </div>
           </div>
 
-          <footer
-            className="
-              flex
-              min-h-[100px]
-              flex-wrap
-              items-center
-              justify-between
-              gap-5
-              py-7
-              font-mono
-              text-sm
-              tracking-wider
-              text-zinc-500
-            "
-          >
+          <footer className="flex min-h-[100px] flex-wrap items-center justify-between gap-5 py-7 font-mono text-sm tracking-wider text-zinc-500">
             <span>© 2026 · FULL-STACK DEVELOPER</span>
 
             <button
               onClick={openContact}
-              className="
-                inline-flex
-                items-center
-                gap-2
-                text-sm
-                font-semibold
-                transition
-
-                hover:-translate-y-1
-                hover:text-zinc-900
-
-                dark:hover:text-white
-              "
+              className="inline-flex items-center gap-2 text-sm font-semibold transition hover:-translate-y-1 hover:text-zinc-900 dark:hover:text-white"
             >
               Connect directly <Icon name="mail" />
             </button>
